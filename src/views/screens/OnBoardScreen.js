@@ -7,19 +7,19 @@ import {PrimaryButton} from '../components/Button';
 const OnBoardScreen = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
-      <View style={{height: 400}}>
+      <View style={{height: 370}}>
         <Image
           style={{
             width: '100%',
             resizeMode: 'contain',
-            top: -150,
+            top: -180,
           }}
           source={require('../../../assets/images/PinkysMobile.png')}
         />
       </View>
       <View style={style.textContainer}>
         <View>
-          <Text style={{fontSize: 32, fontWeight: 'bold', textAlign: 'center'}}>
+          <Text style={{fontSize: 24, fontWeight: 'bold', textAlign: 'center'}}>
             Delicious treats, on the go!
           </Text>
           <Text
@@ -51,7 +51,7 @@ const style = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 50,
     justifyContent: 'space-between',
-    paddingBottom: 40,
+    paddingBottom: 30
   },
   indicatorContainer: {
     height: 50,
