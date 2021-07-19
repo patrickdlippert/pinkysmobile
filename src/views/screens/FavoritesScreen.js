@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import {SafeAreaView, StyleSheet, View, Text, Image, Alert} from 'react-native';
+import {StyleSheet, View, Text, Image, Alert} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
 import COLORS from '../../../shared/colors';
-import {PrimaryButton} from '../components/Button';
 import * as Animatable from 'react-native-animatable';
 import { deleteFavorite } from '../../../redux/ActionCreators';
 import { SwipeRow} from 'react-native-swipe-list-view';
@@ -24,7 +22,6 @@ const mapDispatchToProps = {
 
 
 class FavoritesScreen extends Component {
- 
   render() {
     const { navigate } = this.props.navigation;
     const foods = this.props.foods.foods;
@@ -60,7 +57,6 @@ class FavoritesScreen extends Component {
                     </TouchableOpacity>
                 </View>
 
-
                 <TouchableOpacity  
                   style={styles.cartCard}
                   onPress={() => navigate('DetailsScreen', item)}
@@ -87,10 +83,7 @@ class FavoritesScreen extends Component {
         );
     };
 
-
     return (
-
-
           <Animatable.View animation='fadeInRightBig' duration={2000} >
           <View style={styles.header}>
             <Icon name="arrow-back-ios" size={28} onPress={this.props.navigation.goBack} />
