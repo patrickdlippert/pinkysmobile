@@ -1,6 +1,4 @@
-import { SafeAreaConsumer } from 'react-native-safe-area-context';
-
-const foods = [
+export const FOODS = [
   {
     id: '1',
     name: 'Single Cone',
@@ -202,5 +200,3 @@ const foods = [
      image: require('../assets/images/SaltedCaramel-Brownie.png'),
    } 
 ];
-
-export default foods;

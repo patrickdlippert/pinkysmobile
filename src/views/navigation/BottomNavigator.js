@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../../../shared/colors';
 import {View} from 'react-native';
 import HomeScreen from '../screens/HomeScreen';
+import FavoritesScreen from '../screens/FavoritesScreen';
 import CartScreen from '../screens/CartScreen';
 
 const Tab = createBottomTabNavigator();
@@ -64,7 +65,7 @@ const BottomNavigator = () => {
       />
       <Tab.Screen
         name="Favorite"
-        component={HomeScreen}
+        component={FavoritesScreen}
         options={{
           tabBarIcon: ({color}) => (
             <Icon name="favorite" color={color} size={28} />

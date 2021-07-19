@@ -1,155 +1,161 @@
-import React from 'react';
-import {
-  Dimensions,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
-import {
-  FlatList,
-  ScrollView,
-  TextInput,
-  TouchableHighlight,
-  TouchableOpacity,
-} from 'react-native-gesture-handler';
+import React, { Component } from 'react';
+import { Dimensions, Image, SafeAreaView, StyleSheet, Text,  View} from 'react-native';
+import { FlatList, ScrollView, TextInput, TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { connect } from 'react-redux';
 import COLORS from '../../../shared/colors';
 import categories from '../../../shared/categories';
-import foods from '../../../shared/foods';
+/*import foods from '../../../shared/foods'; */
+
 const {width} = Dimensions.get('screen');
 const cardWidth = width / 2 - 20;
 
-const HomeScreen = ({navigation}) => {
-  const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
 
-  const ListCategories = () => {
-    return (
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={style.categoriesListContainer}>
-        {categories.map((category, index) => (
-          <TouchableOpacity
-            key={index}
-            activeOpacity={0.8}
-            onPress={() => setSelectedCategoryIndex(index)}>
-            <View
-              style={{
-                backgroundColor:
-                  selectedCategoryIndex == index
-                    ? COLORS.primary
-                    : COLORS.secondary,
-                ...style.categoryBtn,
-              }}>
-              <View style={style.categoryBtnImgCon}>
-                <Image
-                  source={category.image}
-                  style={{height: 35, width: 35, resizeMode: 'cover'}}
-                />
-              </View>
-              <Text
+const mapStateToProps = state => {
+  return {
+      foods: state.foods
+  };
+};
+
+
+class HomeScreen extends Component {
+
+/*const HomeScreen = ({navigation}) => {
+  const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0); */
+
+
+  render() {
+    const selectedCategoryIndex = 1;
+    const foods = this.props.foods.foods;
+    const ListCategories = () => {
+      return (
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={style.categoriesListContainer}>
+          {categories.map((category, index) => (
+            <TouchableOpacity
+              key={index}
+              activeOpacity={0.8}
+              onPress={() => setSelectedCategoryIndex(index)}>
+              <View
                 style={{
-                  fontSize: 15,
-                  fontWeight: 'bold',
-                  marginLeft: 10,
-                  color:
+                  backgroundColor:
                     selectedCategoryIndex == index
-                      ? COLORS.white
-                      : COLORS.primary,
+                      ? COLORS.primary
+                      : COLORS.secondary,
+                  ...style.categoryBtn,
                 }}>
-                {category.name}
+                <View style={style.categoryBtnImgCon}>
+                  <Image
+                    source={category.image}
+                    style={{height: 35, width: 35, resizeMode: 'cover'}}
+                  />
+                </View>
+                <Text
+                  style={{
+                    fontSize: 15,
+                    fontWeight: 'bold',
+                    marginLeft: 10,
+                    color:
+                      selectedCategoryIndex == index
+                        ? COLORS.white
+                        : COLORS.primary,
+                  }}>
+                  {category.name}
+                </Text>
+              </View>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+      );
+    };
+    const Card = ({food}) => {
+      return (
+        <TouchableHighlight
+          underlayColor={COLORS.white}
+          activeOpacity={0.9}
+          onPress={() => this.props.navigation.navigate('DetailsScreen', food)}>
+          <View style={style.card}>
+            <View style={{alignItems: 'center'}}>
+              <Image source={food.image} style={{height: 120, width: 120}} />
+            </View>
+            <View style={{marginHorizontal: 20}}>
+              <Text style={{fontSize: 18, fontWeight: 'bold'}}>{food.name}</Text>
+              <Text style={{fontSize: 14, color: COLORS.grey, marginTop: 2}}>
+                {food.ingredients}
               </Text>
             </View>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-    );
-  };
-  const Card = ({food}) => {
-    return (
-      <TouchableHighlight
-        underlayColor={COLORS.white}
-        activeOpacity={0.9}
-        onPress={() => navigation.navigate('DetailsScreen', food)}>
-        <View style={style.card}>
-          <View style={{alignItems: 'center'}}>
-            <Image source={food.image} style={{height: 120, width: 120}} />
-          </View>
-          <View style={{marginHorizontal: 20}}>
-            <Text style={{fontSize: 18, fontWeight: 'bold'}}>{food.name}</Text>
-            <Text style={{fontSize: 14, color: COLORS.grey, marginTop: 2}}>
-              {food.ingredients}
-            </Text>
-          </View>
-          <View
-            style={{
-              marginTop: 10,
-              marginHorizontal: 20,
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={{fontSize: 18, fontWeight: 'bold'}}>
-              ${food.price}
-            </Text>
-            <View style={style.addToCartBtn}>
-              <Icon name="add" size={20} color={COLORS.white} />
+            <View
+              style={{
+                marginTop: 10,
+                marginHorizontal: 20,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              }}>
+              <Text style={{fontSize: 18, fontWeight: 'bold'}}>
+                ${food.price}
+              </Text>
+              <View style={style.addToCartBtn}>
+                <Icon name="add" size={20} color={COLORS.white} />
+              </View>
             </View>
           </View>
-        </View>
-      </TouchableHighlight>
-    );
-  };
-  return (
-    <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
-      <View style={style.header}>
-        <View>
-          <View style={{flexDirection: 'row'}}>
-            <Text style={{fontSize: 28}}>Hello,</Text>
-            <Text style={{fontSize: 28, fontWeight: 'bold', marginLeft: 10}}>
-              Patrick
+        </TouchableHighlight>
+      );
+    };
+    return (
+      <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
+        <View style={style.header}>
+          <View>
+            <View style={{flexDirection: 'row'}}>
+              <Text style={{fontSize: 28}}>Hello,</Text>
+              <Text style={{fontSize: 28, fontWeight: 'bold', marginLeft: 10}}>
+                Patrick
+              </Text>
+            </View>
+            <Text style={{marginTop: 5, fontSize: 18, color: COLORS.grey}}>
+              What can we create for you today?
             </Text>
           </View>
-          <Text style={{marginTop: 5, fontSize: 18, color: COLORS.grey}}>
-            What can we create for you today?
-          </Text>
-        </View>
-        <Image
-          source={require('../../../assets/images/person.png')}
-          style={{height: 50, width: 50, borderRadius: 25}}
-        />
-      </View>
-      <View
-        style={{
-          marginTop: 40,
-          flexDirection: 'row',
-          paddingHorizontal: 20,
-        }}>
-        <View style={style.inputContainer}>
-          <Icon name="search" size={28} />
-          <TextInput
-            style={{flex: 1, fontSize: 18}}
-            placeholder="Search for food"
+          <Image
+            source={require('../../../assets/images/person.png')}
+            style={{height: 50, width: 50, borderRadius: 25}}
           />
         </View>
-        <View style={style.sortBtn}>
-          <Icon name="tune" size={28} color={COLORS.white} />
+        <View
+          style={{
+            marginTop: 40,
+            flexDirection: 'row',
+            paddingHorizontal: 20,
+          }}>
+          <View style={style.inputContainer}>
+            <Icon name="search" size={28} />
+            <TextInput
+              style={{flex: 1, fontSize: 18}}
+              placeholder="Search for treats"
+            />
+          </View>
+          <View style={style.sortBtn}>
+            <Icon name="tune" size={28} color={COLORS.white} />
+          </View>
         </View>
-      </View>
-      <View>
-        <ListCategories />
-      </View>
-      <FlatList
-        showsVerticalScrollIndicator={false}
-        numColumns={2}
-        data={foods}
-        initialNumToRender={4}
-        renderItem={({item}) => <Card food={item} />}
-      />
-    </SafeAreaView>
-  );
-};
+        <View>
+          <ListCategories />
+        </View>
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          numColumns={2}
+          data={foods}
+          initialNumToRender={4}
+          renderItem={({item}) => <Card food={item} />}
+        />
+      </SafeAreaView>
+    );
+  }
+}
+
+
 
 const style = StyleSheet.create({
   header: {
@@ -218,4 +224,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default connect(mapStateToProps, null)(HomeScreen);
