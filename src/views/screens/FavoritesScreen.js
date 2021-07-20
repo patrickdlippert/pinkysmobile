@@ -24,7 +24,6 @@ const mapDispatchToProps = {
 class FavoritesScreen extends Component {
   render() {
     const { navigate } = this.props.navigation;
-    const foods = this.props.foods.foods;
 
 
     const renderFavoriteItem = ({item}) => {
@@ -90,7 +89,8 @@ class FavoritesScreen extends Component {
             <Text style={{fontSize: 20, fontWeight: 'bold'}}>Favorites</Text>
           </View>
           <FlatList
-              data={this.props.foods.foods}
+              data={this.props.foods.foods.filter(
+                food => this.props.favorites.includes(food.id))} 
               renderItem={renderFavoriteItem}
               keyExtractor={item => item.id.toString()}
           />
