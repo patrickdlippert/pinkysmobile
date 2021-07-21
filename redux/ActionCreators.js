@@ -40,11 +40,10 @@ export const addFoods = foods => ({
 });
 */
 
-
 export const postFavorite = foodId => dispatch => {
     setTimeout(() => {
         dispatch(addFavorite(foodId));
-    }, 2000);
+    }, 500);
 };
 
 export const addFavorite = foodId => ({

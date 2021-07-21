@@ -18,30 +18,48 @@ const mapStateToProps = state => {
 };
 
 
+
+
 class HomeScreen extends Component {
 
-/*const HomeScreen = ({navigation}) => {
-  const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0); */
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedCategoryIndex: 0
+    };
+  } 
 
+
+  setSelectedCategoryIndex(index) {
+    this.setState({selectedCategoryIndex: index});
+  }
 
   render() {
-    const selectedCategoryIndex = 1;
-    const foods = this.props.foods.foods;
+    console.log("Render Index: " + this.state.selectedCategoryIndex);
+    const foodData = this.props.foods.foods.filter(food => food.category === this.state.selectedCategoryIndex);
+
     const ListCategories = () => {
       return (
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
+          ref={ref => (this.scrollView = ref)}
+          /* If a horizontal category is selected, make sure that the highlighted
+           button remains in view when the page is re-rendered */
+          onContentSizeChange={() => {
+            if(this.state.selectedCategoryIndex > 2) {
+            this.scrollView.scrollToEnd({ animated: false }, 200); }
+          }}
           contentContainerStyle={style.categoriesListContainer}>
           {categories.map((category, index) => (
             <TouchableOpacity
               key={index}
               activeOpacity={0.8}
-              onPress={() => setSelectedCategoryIndex(index)}>
+              onPress={() => this.setSelectedCategoryIndex(index)}>
               <View
                 style={{
                   backgroundColor:
-                    selectedCategoryIndex == index
+                  this.state.selectedCategoryIndex == index
                       ? COLORS.primary
                       : COLORS.secondary,
                   ...style.categoryBtn,
@@ -58,7 +76,7 @@ class HomeScreen extends Component {
                     fontWeight: 'bold',
                     marginLeft: 10,
                     color:
-                      selectedCategoryIndex == index
+                      this.state.selectedCategoryIndex  == index
                         ? COLORS.white
                         : COLORS.primary,
                   }}>
@@ -146,7 +164,7 @@ class HomeScreen extends Component {
         <FlatList
           showsVerticalScrollIndicator={false}
           numColumns={2}
-          data={foods}
+          data={foodData}
           initialNumToRender={4}
           renderItem={({item}) => <Card food={item} />}
         />
