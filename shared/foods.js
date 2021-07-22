@@ -19,6 +19,15 @@ export const FOODS = [
   },
   {
     id: '3',
+    name: 'Triple Cone',
+    category: 0, /* scoops */
+    ingredients: 'Triple Scoop Cone',
+    description: 'Choose three scoops from any of our amazing flavors, including fantastic tastes of the season! All handcrafted, organic ice cream with unsurpassed quality ingredients.',
+    price: '4.95',
+    image: require('../assets/images/TripleCone.png'),
+  },
+  {
+    id: '4',
     name: 'Waffle Bowl',
     category: 0, /* scoops */
     ingredients: 'Waffle Bowl',
@@ -27,7 +36,7 @@ export const FOODS = [
     image: require('../assets/images/WaffleBowl-Sundae.png'),
   },
   {
-    id: '4',
+    id: '5',
     name: 'Lip Schmacker',
     category: 1, /* sundae */
     ingredients: 'Peanut Butter Sundae',
@@ -36,7 +45,7 @@ export const FOODS = [
     image: require('../assets/images/PeanutButter-Sundae.png'),
   },
   {
-    id: '5',
+    id: '6',
     name: 'Sweet Shorty',
     category: 1, /* sundae */
     ingredients: 'Strawberry Shortcake Sundae',
@@ -45,7 +54,7 @@ export const FOODS = [
     image: require('../assets/images/ShortSweetSundae.png'),
   },
   {
-    id: '6',
+    id: '7',
     name: 'Choc Sha-bang',
     category: 1, /* sundae */
     ingredients: "Chocolate Lover's Sundae",
@@ -54,7 +63,7 @@ export const FOODS = [
     image: require('../assets/images/Brownie-Sundae.png'),
   },
   {
-    id: '7',
+    id: '8',
     name: 'Cookie Dreams',
     category: 1, /* sundae */
     ingredients: 'Oreo Cookie Sundae',
@@ -63,7 +72,7 @@ export const FOODS = [
     image: require('../assets/images/CookieDreams-Sundae.png'),
   },
   {
-    id: '8',
+    id: '9',
     name: 'Campfire',
     category: 1, /* sundae */
     ingredients: "S'mores Sundae",
@@ -72,7 +81,7 @@ export const FOODS = [
     image: require('../assets/images/Smores-Sundae.png'),
   },
   {
-    id: '9',
+    id: '10',
     name: 'Pick Me Up',
     category: 1, /* sundae */
     ingredients: "Coffee Sundae",
@@ -81,7 +90,7 @@ export const FOODS = [
     image: require('../assets/images/Coffee-Sundae.png'),
   },
   {
-    id: '10',
+    id: '11',
     name: 'Splitsville',
     category: 1, /* sundae */
     ingredients: "Banana Split",
@@ -90,7 +99,7 @@ export const FOODS = [
     image: require('../assets/images/bananasplit.png'),
   },  
   {
-    id: '11',
+    id: '12',
     name: 'Vanilla Shake',
     category: 2, /* shakes */
     ingredients: "Vanilla Shake",
@@ -99,61 +108,61 @@ export const FOODS = [
     image: require('../assets/images/Vanilla-Shake.png'),
   },
   {
-    id: '12',
+    id: '13',
     name: 'Chocolate Shake',
     category: 2, /* shakes */
     ingredients: "Chocolate Shake",
-    description: "Enjoy this heavenly cloud of Vanilla goodness! Rich organic vanilla ice cream boosted with an additional shot of Ghiradelli Vanilla sauce, topped off with house whipped cream.",
+    description: "Prepare yourself for extreme chocolate goodness! We take whole-bean vanilla ice cream, hot fudge sauce and heavy cream to make the smoothest chocolate shake ever. Topped with homemade whipped cream and extra fudge drizzle for perfection.",
     price: '4.95',
     image: require('../assets/images/Chocolate-Shake.png'),
   },
   {
-    id: '13',
+    id: '14',
     name: 'Strawberry Shake',
     category: 2, /* shakes */
     ingredients: "Strawberry Shake",
-    description: "Enjoy this heavenly cloud of Vanilla goodness! Rich organic vanilla ice cream boosted with an additional shot of Ghiradelli Vanilla sauce, topped off with house whipped cream.",
+    description: "Get ready for the best tasting Strawberry Milkshake! This delicious milkshake is loaded with tons of fresh strawberry flavor. The secret to unlocking this flavor starts with our rich strawberry ice cream, frozen strawberries and strawberry jam. You’ll be sipping on the creamiest, most flavorful Strawberry Milkshake ever.",
     price: '4.95',
     image: require('../assets/images/Strawberry-Shake.png'),
   },
   {
-    id: '14',
+    id: '15',
     name: 'Caramel Shake',
     category: 2, /* shakes */
     ingredients: "Caramel Shake",
-    description: "Enjoy this heavenly cloud of Vanilla goodness! Rich organic vanilla ice cream boosted with an additional shot of Ghiradelli Vanilla sauce, topped off with house whipped cream.",
+    description: "This Salted Caramel Milkshake is made with creamy vanilla ice cream and homemade salted caramel sauce. Topped with fluffy whipped cream, extra salted caramel sauce and toffee bits — this is the perfect chilly drink to indulge in! ",
     price: '4.95',
     image: require('../assets/images/Caramel-Shake.png'),
   },
   {
-    id: '15',
+    id: '16',
     name: 'Mint Shake',
     category: 2, /* shakes */
     ingredients: "Mint Shake",
-    description: "Enjoy this heavenly cloud of Vanilla goodness! Rich organic vanilla ice cream boosted with an additional shot of Ghiradelli Vanilla sauce, topped off with house whipped cream.",
+    description: "A delicious, green, minty shake is the perfect milkshake to cool you down! Made with mint chocolate chip ice cream, milk and topped with homemade whipped cream, these delicious minty green milkshakes make a sweet treat for any day of the year.",
     price: '4.95',
     image: require('../assets/images/Mint-Shake.png'),
   },
   {
-    id: '16',
+    id: '17',
     name: 'Orange Shake',
     category: 2, /* shakes */
     ingredients: "Orange Cream Shake",
-    description: "Enjoy this heavenly cloud of Vanilla goodness! Rich organic vanilla ice cream boosted with an additional shot of Ghiradelli Vanilla sauce, topped off with house whipped cream.",
+    description: "This fabulous Dreamy Orange Creamsicle Shake is bursting with orange flavor and is incredibly creamy. Made with fresh Florida orange juice and whole-bean vanilla ice cream, it is an amazing treat that will knock your socks off!.",
     price: '4.95',
     image: require('../assets/images/Orange-Shake.png'),
   },
   {
-    id: '17',
+    id: '18',
     name: 'Birthday Shake',
     category: 2, /* shakes */
     ingredients: "Birthday Cake Shake",
-    description: "Enjoy this heavenly cloud of Vanilla goodness! Rich organic vanilla ice cream boosted with an additional shot of Ghiradelli Vanilla sauce, topped off with house whipped cream.",
+    description: "This delicious shake comes packed with buttercream-frosted bits of yellow cake, ice cream, a heap of sprinkles and a dollop of rich chocolate whipped cream!",
     price: '4.95',
     image: require('../assets/images/BirthdayCake-Shake.png'),
   },
   {
-    id: '18',
+    id: '19',
     name: 'Choc Chip Cookie',
     category: 3, /* cookies */
     ingredients: 'Chocolate Chip Cookie',
@@ -162,7 +171,7 @@ export const FOODS = [
     image: require('../assets/images/ChocChip-Cookie.png'),
   },
   {
-    id: '19',
+    id: '20',
     name: 'Oatmeal Cookie',
     category: 3, /* cookies */
     ingredients: "Oatmeal Raisin Cookie",
@@ -171,7 +180,7 @@ export const FOODS = [
     image: require('../assets/images/OatmealRaisin-Cookie.png'),
   },
   {
-    id: '20',
+    id: '21',
     name: 'Candy Cookie',
     category: 3, /* cookies */
     ingredients: "M & M Cookie",
@@ -180,7 +189,7 @@ export const FOODS = [
     image: require('../assets/images/MM-Cookie.png'),
   },
   {
-    id: '21',
+    id: '22',
     name: 'Peanut Butter Cookie',
     category: 3, /* cookies */
     ingredients: "Peanut Butter Cookie",
@@ -189,7 +198,7 @@ export const FOODS = [
     image: require('../assets/images/PeanutButter-Cookie.png'),
   },
   {
-    id: '22',
+    id: '23',
     name: 'Fudge Brownie',
     category: 4, /* brownies */
     ingredients: "Fudge Brownie (no nuts)",
@@ -198,7 +207,7 @@ export const FOODS = [
     image: require('../assets/images/Fudge-Brownie.png'),
   },
   {
-   id: '23',
+   id: '24',
     name: 'Blondie Bar',
     category: 4, /* brownies */
     ingredients: "Brown Sugar Blondie",
@@ -207,7 +216,7 @@ export const FOODS = [
     image: require('../assets/images/Blondie-Bar.png'),
   },
   {
-    id: '24',
+    id: '25',
      name: 'Grasshopper',
      category: 4, /* brownies */
      ingredients: "Mint Chocolate Brownie",
@@ -216,7 +225,7 @@ export const FOODS = [
      image: require('../assets/images/Mint-Brownie.png'),
    },
    {
-    id: '25',
+    id: '26',
      name: 'Salted Caramel Brownie',
      category: 4, /* brownies */
      ingredients: "Salted Caramel Brownie",

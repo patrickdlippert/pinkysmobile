@@ -55,3 +55,26 @@ export const deleteFavorite = foodId => ({
     type: ActionTypes.DELETE_FAVORITE,
     payload: foodId
 });
+
+
+
+export const postCartItem = foodItem => dispatch => {
+    setTimeout(() => {
+        dispatch(addCartItem(foodItem));
+    }, 500);
+};
+
+export const addCartItem = foodItem => ({
+    type: ActionTypes.ADD_CART_ITEM,
+    payload: foodItem
+});
+
+export const deleteCartItem = foodId => ({
+    type: ActionTypes.DELETE_CART_ITEM,
+    payload: foodId
+});
+
+export const dropCart = () => ({
+    type: ActionTypes.DROP_CART,
+    payload: null
+});

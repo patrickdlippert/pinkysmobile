@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../../../shared/colors';
 import {SecondaryButton} from '../components/Button';
 import { connect } from 'react-redux';
-import { postFavorite, deleteFavorite } from '../../../redux/ActionCreators';
+import { postFavorite, deleteFavorite, postCartItem } from '../../../redux/ActionCreators';
 
 const mapStateToProps = state => {
   return {
@@ -15,10 +15,21 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   postFavorite: foodId => (postFavorite(foodId)),
-  deleteFavorite: foodId => (deleteFavorite(foodId))
+  deleteFavorite: foodId => (deleteFavorite(foodId)),
+  postCartItem: foodItem => (postCartItem(foodItem)),
 };
 
+
+
 class DetailsScreen extends Component {
+
+  // This function adds the selected item to the shopping cart and returns
+  // the user back to the HomeScreen view
+  addItemToCart(foodItem) {
+      this.props.postCartItem(foodItem);
+      this.props.navigation.goBack();
+  }
+
   render() {
     const item = this.props.route.params;
     const favorite = this.props.favorites.includes(item.id);
@@ -63,7 +74,10 @@ class DetailsScreen extends Component {
               {item.description}
             </Text>
             <View style={{marginTop: 40, marginBottom: 40}}>
-              <SecondaryButton title="Add To Cart" />
+              <SecondaryButton 
+                onPress={() => this.addItemToCart(item)}
+                title="Add To Cart" 
+              />
             </View>
           </View>
         </ScrollView>

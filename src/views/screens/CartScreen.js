@@ -5,23 +5,27 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { connect } from 'react-redux';
 import COLORS from '../../../shared/colors';
 import {PrimaryButton} from '../components/Button';
+import { dropCart } from '../../../redux/ActionCreators';
 
 const mapStateToProps = state => {
   return {
-      foods: state.foods
+      foods: state.foods,
+      cart: state.cart
   };
 };
 
+const mapDispatchToProps = {
+  dropCart: () => (dropCart())
+};
 
 class CartScreen extends Component {
-/*
-const CartScreen = ({navigation}) => { */
+
  
   render() {
     const foods = this.props.foods.foods;
     const CartCard = ({item}) => {
       return (
-        <View style={style.cartCard}>
+        <View style={styles.cartCard}>
           <Image source={item.image} style={{height: 80, width: 80}} />
           <View
             style={{
@@ -37,8 +41,8 @@ const CartScreen = ({navigation}) => { */
             <Text style={{fontSize: 17, fontWeight: 'bold'}}>${item.price}</Text>
           </View>
           <View style={{marginRight: 20, alignItems: 'center'}}>
-            <Text style={{fontWeight: 'bold', fontSize: 18}}>3</Text>
-            <View style={style.actionBtn}>
+            <Text style={{fontWeight: 'bold', fontSize: 18}}>1</Text>
+            <View style={styles.actionBtn}>
               <Icon name="remove" size={25} color={COLORS.white} />
               <Icon name="add" size={25} color={COLORS.white} />
             </View>
@@ -46,44 +50,67 @@ const CartScreen = ({navigation}) => { */
         </View>
       );
     };
-    return (
-      <SafeAreaView style={{backgroundColor: COLORS.white, flex: 1}}>
-        <View style={style.header}>
-          <Icon name="arrow-back-ios" size={28} onPress={this.props.navigation.goBack} />
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>Cart</Text>
-        </View>
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={{paddingBottom: 80}}
-          data={foods}
-          renderItem={({item}) => <CartCard item={item} />}
-          ListFooterComponentStyle={{paddingHorizontal: 20, marginTop: 20}}
-          ListFooterComponent={() => (
-            <View>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                  marginVertical: 15,
-                }}>
-                <Text style={{fontSize: 18, fontWeight: 'bold'}}>
-                  Total Price
-                </Text>
-                <Text style={{fontSize: 18, fontWeight: 'bold'}}>$50</Text>
-              </View>
-              <View style={{marginHorizontal: 30}}>
-                <PrimaryButton title="CHECKOUT" />
-              </View>
+
+
+      return (
+        <SafeAreaView style={{backgroundColor: COLORS.white, flex: 1}}>
+          <View style={styles.header}>
+            <Icon name="arrow-back-ios" size={28} onPress={this.props.navigation.goBack} />
+            <Text style={{fontSize: 20, fontWeight: 'bold'}}>Cart</Text>
+          </View>
+
+          {this.props.cart.cartItems.length ? 
+          
+            <FlatList
+              showsVerticalScrollIndicator={false}
+              contentContainerStyle={{paddingBottom: 80}}
+              data={this.props.foods.foods.filter(
+                food => this.props.cart.cartItems.includes(food.id))} 
+              renderItem={({item}) => <CartCard item={item} />}
+              ListFooterComponentStyle={{paddingHorizontal: 20, marginTop: 20}}
+              ListFooterComponent={() => (
+                <View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
+                      marginVertical: 15,
+                    }}>
+                    <Text style={{fontSize: 18, fontWeight: 'bold'}}>
+                      Subtotal
+                    </Text>
+                    <Text style={{fontSize: 18, fontWeight: 'bold'}}>${this.props.cart.total.toFixed(2)}</Text>
+                  </View>
+
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
+                      marginVertical: 15,
+                    }}>
+                    <Text style={{color: COLORS.primary}} onPress={() => this.props.dropCart()}>Clear Shopping Cart</Text>
+                  </View>
+                  <View style={{marginHorizontal: 30}}>
+                    <PrimaryButton title="CHECKOUT" />
+                  </View>
+                </View>
+              )}
+            />
+
+            : 
+
+            <View style={styles.textContainer}>
+                <Text style={styles.textItem}>Your cart is empty.</Text>
             </View>
-          )}
-        />
-      </SafeAreaView>
-    );
+    
+        }
+        </SafeAreaView>
+      );
   }
 }
 
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   header: {
     paddingVertical: 20,
     flexDirection: 'row',
@@ -111,6 +138,17 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
   },
+  textContainer: {
+    flex:1,
+    margin: 40,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  textItem: {
+    color: COLORS.primary,
+    fontSize: 18,
+    fontWeight: 'bold'
+  }
 });
 
-export default connect(mapStateToProps, null)(CartScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(CartScreen);
