@@ -4,7 +4,7 @@ export const FOODS = [
     name: 'Single Cone',
     category: 0, /* scoops */
     ingredients: 'Single Scoop Cone',
-    description: 'Choose one scoop from any of our amazing flavors, including fantastic tastes of the season! All handcrafted, organic ice cream with unsurpassed quality ingredients.',
+    description: 'Choose one scoop from any of our amazing flavors, including fantastic tastes of the season! All handcrafted, organic ice cream with unsurpassed quality ingredients served in our waffle cone.',
     price: '2.95',
     image: require('../assets/images/SingleCone.png'),
   },
@@ -13,7 +13,7 @@ export const FOODS = [
     name: 'Double Cone',
     category: 0, /* scoops */
     ingredients: 'Double Scoop Cone',
-    description: 'Choose two scoops from any of our amazing flavors, including fantastic tastes of the season! All handcrafted, organic ice cream with unsurpassed quality ingredients.',
+    description: 'Choose two scoops from any of our amazing flavors, including fantastic tastes of the season! All handcrafted, organic ice cream with unsurpassed quality ingredients served in our waffle cone.',
     price: '3.95',
     image: require('../assets/images/DoubleCone.png'),
   },
@@ -22,12 +22,39 @@ export const FOODS = [
     name: 'Triple Cone',
     category: 0, /* scoops */
     ingredients: 'Triple Scoop Cone',
-    description: 'Choose three scoops from any of our amazing flavors, including fantastic tastes of the season! All handcrafted, organic ice cream with unsurpassed quality ingredients.',
+    description: 'Choose three scoops from any of our amazing flavors, including fantastic tastes of the season! All handcrafted, organic ice cream with unsurpassed quality ingredients served in our waffle cone.',
     price: '4.95',
     image: require('../assets/images/TripleCone.png'),
   },
   {
     id: '4',
+    name: 'Single Cup',
+    category: 0, /* scoops */
+    ingredients: 'Single Scoop Cup',
+    description: 'Choose one scoop from any of our amazing flavors, including fantastic tastes of the season! All handcrafted, organic ice cream with unsurpassed quality ingredients.',
+    price: '2.95',
+    image: require('../assets/images/SingleCup.png'),
+  },
+  {
+    id: '5',
+    name: 'Double Cup',
+    category: 0, /* scoops */
+    ingredients: 'Double Scoop Cup',
+    description: 'Choose two scoops from any of our amazing flavors, including fantastic tastes of the season! All handcrafted, organic ice cream with unsurpassed quality ingredients.',
+    price: '3.95',
+    image: require('../assets/images/DoubleCup.png'),
+  },
+  {
+    id: '6',
+    name: 'Triple Cup',
+    category: 0, /* scoops */
+    ingredients: 'Triple Scoop Cup',
+    description: 'Choose three scoops from any of our amazing flavors, including fantastic tastes of the season! All handcrafted, organic ice cream with unsurpassed quality ingredients.',
+    price: '4.95',
+    image: require('../assets/images/TripleCup.png'),
+  },
+  {
+    id: '7',
     name: 'Waffle Bowl',
     category: 0, /* scoops */
     ingredients: 'Waffle Bowl',
@@ -36,7 +63,7 @@ export const FOODS = [
     image: require('../assets/images/WaffleBowl-Sundae.png'),
   },
   {
-    id: '5',
+    id: '8',
     name: 'Lip Schmacker',
     category: 1, /* sundae */
     ingredients: 'Peanut Butter Sundae',
@@ -45,7 +72,7 @@ export const FOODS = [
     image: require('../assets/images/PeanutButter-Sundae.png'),
   },
   {
-    id: '6',
+    id: '9',
     name: 'Sweet Shorty',
     category: 1, /* sundae */
     ingredients: 'Strawberry Shortcake Sundae',
@@ -54,7 +81,7 @@ export const FOODS = [
     image: require('../assets/images/ShortSweetSundae.png'),
   },
   {
-    id: '7',
+    id: '10',
     name: 'Choc Sha-bang',
     category: 1, /* sundae */
     ingredients: "Chocolate Lover's Sundae",
@@ -63,7 +90,7 @@ export const FOODS = [
     image: require('../assets/images/Brownie-Sundae.png'),
   },
   {
-    id: '8',
+    id: '11',
     name: 'Cookie Dreams',
     category: 1, /* sundae */
     ingredients: 'Oreo Cookie Sundae',
@@ -72,7 +99,7 @@ export const FOODS = [
     image: require('../assets/images/CookieDreams-Sundae.png'),
   },
   {
-    id: '9',
+    id: '12',
     name: 'Campfire',
     category: 1, /* sundae */
     ingredients: "S'mores Sundae",
@@ -81,7 +108,7 @@ export const FOODS = [
     image: require('../assets/images/Smores-Sundae.png'),
   },
   {
-    id: '10',
+    id: '13',
     name: 'Pick Me Up',
     category: 1, /* sundae */
     ingredients: "Coffee Sundae",
@@ -90,7 +117,7 @@ export const FOODS = [
     image: require('../assets/images/Coffee-Sundae.png'),
   },
   {
-    id: '11',
+    id: '14',
     name: 'Splitsville',
     category: 1, /* sundae */
     ingredients: "Banana Split",
@@ -99,7 +126,7 @@ export const FOODS = [
     image: require('../assets/images/bananasplit.png'),
   },  
   {
-    id: '12',
+    id: '15',
     name: 'Vanilla Shake',
     category: 2, /* shakes */
     ingredients: "Vanilla Shake",
@@ -108,7 +135,7 @@ export const FOODS = [
     image: require('../assets/images/Vanilla-Shake.png'),
   },
   {
-    id: '13',
+    id: '16',
     name: 'Chocolate Shake',
     category: 2, /* shakes */
     ingredients: "Chocolate Shake",
@@ -117,7 +144,7 @@ export const FOODS = [
     image: require('../assets/images/Chocolate-Shake.png'),
   },
   {
-    id: '14',
+    id: '17',
     name: 'Strawberry Shake',
     category: 2, /* shakes */
     ingredients: "Strawberry Shake",
@@ -126,7 +153,7 @@ export const FOODS = [
     image: require('../assets/images/Strawberry-Shake.png'),
   },
   {
-    id: '15',
+    id: '18',
     name: 'Caramel Shake',
     category: 2, /* shakes */
     ingredients: "Caramel Shake",
@@ -135,7 +162,7 @@ export const FOODS = [
     image: require('../assets/images/Caramel-Shake.png'),
   },
   {
-    id: '16',
+    id: '19',
     name: 'Mint Shake',
     category: 2, /* shakes */
     ingredients: "Mint Shake",
@@ -144,7 +171,7 @@ export const FOODS = [
     image: require('../assets/images/Mint-Shake.png'),
   },
   {
-    id: '17',
+    id: '20',
     name: 'Orange Shake',
     category: 2, /* shakes */
     ingredients: "Orange Cream Shake",
@@ -153,7 +180,7 @@ export const FOODS = [
     image: require('../assets/images/Orange-Shake.png'),
   },
   {
-    id: '18',
+    id: '21',
     name: 'Birthday Shake',
     category: 2, /* shakes */
     ingredients: "Birthday Cake Shake",
@@ -162,7 +189,7 @@ export const FOODS = [
     image: require('../assets/images/BirthdayCake-Shake.png'),
   },
   {
-    id: '19',
+    id: '22',
     name: 'Choc Chip Cookie',
     category: 3, /* cookies */
     ingredients: 'Chocolate Chip Cookie',
@@ -171,7 +198,7 @@ export const FOODS = [
     image: require('../assets/images/ChocChip-Cookie.png'),
   },
   {
-    id: '20',
+    id: '23',
     name: 'Oatmeal Cookie',
     category: 3, /* cookies */
     ingredients: "Oatmeal Raisin Cookie",
@@ -180,7 +207,7 @@ export const FOODS = [
     image: require('../assets/images/OatmealRaisin-Cookie.png'),
   },
   {
-    id: '21',
+    id: '24',
     name: 'Candy Cookie',
     category: 3, /* cookies */
     ingredients: "M & M Cookie",
@@ -189,7 +216,7 @@ export const FOODS = [
     image: require('../assets/images/MM-Cookie.png'),
   },
   {
-    id: '22',
+    id: '25',
     name: 'Peanut Butter Cookie',
     category: 3, /* cookies */
     ingredients: "Peanut Butter Cookie",
@@ -198,7 +225,7 @@ export const FOODS = [
     image: require('../assets/images/PeanutButter-Cookie.png'),
   },
   {
-    id: '23',
+    id: '26',
     name: 'Fudge Brownie',
     category: 4, /* brownies */
     ingredients: "Fudge Brownie (no nuts)",
@@ -207,7 +234,7 @@ export const FOODS = [
     image: require('../assets/images/Fudge-Brownie.png'),
   },
   {
-   id: '24',
+   id: '27',
     name: 'Blondie Bar',
     category: 4, /* brownies */
     ingredients: "Brown Sugar Blondie",
@@ -216,7 +243,7 @@ export const FOODS = [
     image: require('../assets/images/Blondie-Bar.png'),
   },
   {
-    id: '25',
+    id: '28',
      name: 'Grasshopper',
      category: 4, /* brownies */
      ingredients: "Mint Chocolate Brownie",
@@ -225,7 +252,7 @@ export const FOODS = [
      image: require('../assets/images/Mint-Brownie.png'),
    },
    {
-    id: '26',
+    id: '29',
      name: 'Salted Caramel Brownie',
      category: 4, /* brownies */
      ingredients: "Salted Caramel Brownie",
