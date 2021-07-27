@@ -22,7 +22,6 @@ class CartScreen extends Component {
 
  
   render() {
-    const foods = this.props.foods.foods;
     const CartCard = ({item}) => {
       return (
         <View style={styles.cartCard}>
@@ -41,7 +40,7 @@ class CartScreen extends Component {
             <Text style={{fontSize: 17, fontWeight: 'bold'}}>${item.price}</Text>
           </View>
           <View style={{marginRight: 20, alignItems: 'center'}}>
-            <Text style={{fontWeight: 'bold', fontSize: 18}}>1</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 18}}>{item.quantity}</Text>
             <View style={styles.actionBtn}>
               <Icon name="remove" size={25} color={COLORS.white} />
               <Icon name="add" size={25} color={COLORS.white} />
@@ -51,6 +50,21 @@ class CartScreen extends Component {
       );
     };
 
+    /* Construct an array of objects that combines the selected food items with the quantity
+       so that FlatList iterates over one data collection  */
+    const foodData = this.props.foods.foods.filter(
+      food => this.props.cart.cartItems.find(cartItem => cartItem.id == food.id));
+
+    let newData = [];
+    for(let i=0; i < foodData.length; i++) {
+      newData.push({
+        id: foodData[i].id,
+        name:  foodData[i].name,
+        ingredients: foodData[i].ingredients,
+        price: foodData[i].price,
+        image: foodData[i].image,
+        quantity: this.props.cart.cartItems[i].quantity});
+    }
 
       return (
         <SafeAreaView style={{backgroundColor: COLORS.white, flex: 1}}>
@@ -64,8 +78,10 @@ class CartScreen extends Component {
             <FlatList
               showsVerticalScrollIndicator={false}
               contentContainerStyle={{paddingBottom: 80}}
-              data={this.props.foods.foods.filter(
-                food => this.props.cart.cartItems.includes(food.id))} 
+
+              data = {newData}
+
+
               renderItem={({item}) => <CartCard item={item} />}
               ListFooterComponentStyle={{paddingHorizontal: 20, marginTop: 20}}
               ListFooterComponent={() => (

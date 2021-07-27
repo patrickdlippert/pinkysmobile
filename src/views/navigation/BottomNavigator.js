@@ -86,15 +86,28 @@ class BottomNavigator extends Component {
           options={{
             tabBarIcon: ({color}) => (
               <View style={{ padding: 5 }}>
-                <View style={{
-                  position: 'absolute', height: 30, width: 30, 
-                  borderRadius: 15, backgroundColor: 'rgba(255,0,0,0.7)',
-                  right: 15, bottom: 15, alignItems: 'center', justifyContent: 'center', zIndex: 2000
-                }}>
-                  <Text style={{ color: 'white', fontWeight: 'bold'}}>
-                     {this.props.cart.cartItems.length}
-                  </Text>
-                </View>
+
+                { /* Put a red circle on top of shopping cart icon if items have been selected */
+                this.props.cart.cartItems.length ?
+                  <View style={{
+                    position: 'absolute', height: 30, width: 30, 
+                    borderRadius: 15, backgroundColor: 'rgba(255,0,0,0.7)',
+                    right: 15, bottom: 15, alignItems: 'center', justifyContent: 'center', zIndex: 2000
+                  }}>
+                    <Text style={{ color: 'white', fontWeight: 'bold'}}>
+                      { this.props.cart.cartItems.map(cartItem => cartItem.quantity).reduce(((prev, next) => prev + next),0) }
+
+                    </Text>
+                  </View>
+                  :
+                  /* Put an empty placeholder on top of cart icon if the cart is empty */
+                  <View style={{
+                    position: 'absolute', height: 30, width: 30, 
+                    right: 15, bottom: 15, alignItems: 'center', justifyContent: 'center', zIndex: 2000
+                  }}> 
+                  </View>
+                }
+
                 <Icon name="shopping-cart" color={color} size={28} />
               </View>
             ),
