@@ -8,6 +8,8 @@ import {connect} from 'react-redux';
 import HomeScreen from '../screens/HomeScreen';
 import FavoritesScreen from '../screens/FavoritesScreen';
 import CartScreen from '../screens/CartScreen';
+import MapScreen from '../screens/MapScreen';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -50,7 +52,7 @@ class BottomNavigator extends Component {
         />
         <Tab.Screen
           name="Search"
-          component={HomeScreen}
+          component={MapScreen}
           options={{
             tabBarIcon: ({color}) => (
               <View

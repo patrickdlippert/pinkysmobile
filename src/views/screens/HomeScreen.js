@@ -155,7 +155,7 @@ class HomeScreen extends Component {
             />
           </View>
           <View style={style.sortBtn}>
-            <Icon name="tune" size={28} color={COLORS.white} />
+            <Icon name="tune" size={24} color={COLORS.white} />
           </View>
         </View>
         <View>

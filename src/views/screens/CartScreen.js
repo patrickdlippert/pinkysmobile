@@ -72,11 +72,23 @@ class CartScreen extends Component {
       );
     };
 
-    /* Construct an array of objects that combines the selected food items with the quantity
-       from the cart so that FlatList iterates over one data collection  */
-    const foodData = this.props.foods.foods.filter(
-      food => this.props.cart.cartItems.find(cartItem => cartItem.id == food.id));
 
+ 
+
+    /* Pull out the ids from the cart objects to make a simple array is Ids for sorting */
+    let cartData = [];
+    for(let i=0; i < this.props.cart.cartItems.length; i++) {
+      cartData[i] = this.props.cart.cartItems[i].id;
+    }
+
+    /* Pull out the complete information for each food item that's found in the cart */
+    const foodData = this.props.foods.foods.filter(
+    food => this.props.cart.cartItems.find(cartItem => cartItem.id == food.id));
+
+    /* sort the food items to be in the exact order as the shopping cart */
+    foodData.sort((a,b) => cartData.indexOf(a.id) - cartData.indexOf(b.id));
+
+    /* Construct the combined array of objects for FlatList since two data sets cannot be passed in. */
     let newData = [];
     for(let i=0; i < foodData.length; i++) {
       newData.push({
@@ -87,6 +99,7 @@ class CartScreen extends Component {
         image: foodData[i].image,
         quantity: this.props.cart.cartItems[i].quantity});
     }
+    
 
       return (
         <SafeAreaView style={{backgroundColor: COLORS.white, flex: 1}}>
@@ -102,7 +115,7 @@ class CartScreen extends Component {
               contentContainerStyle={{paddingBottom: 80}}
 
               data = {newData}
-
+              keyExtractor={item => item.id.toString()}
 
               renderItem={({item}) => <CartCard item={item} />}
               ListFooterComponentStyle={{paddingHorizontal: 20, marginTop: 20}}

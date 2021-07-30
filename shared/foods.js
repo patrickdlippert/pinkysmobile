@@ -1,6 +1,6 @@
 export const FOODS = [
   {
-    id: '1',
+    id: '0',
     name: 'Single Cone',
     category: 0, /* scoops */
     ingredients: 'Single Scoop Cone',
@@ -9,7 +9,7 @@ export const FOODS = [
     image: require('../assets/images/SingleCone.png'),
   },
   {
-    id: '2',
+    id: '1',
     name: 'Double Cone',
     category: 0, /* scoops */
     ingredients: 'Double Scoop Cone',
@@ -18,7 +18,7 @@ export const FOODS = [
     image: require('../assets/images/DoubleCone.png'),
   },
   {
-    id: '3',
+    id: '2',
     name: 'Triple Cone',
     category: 0, /* scoops */
     ingredients: 'Triple Scoop Cone',
@@ -27,7 +27,7 @@ export const FOODS = [
     image: require('../assets/images/TripleCone.png'),
   },
   {
-    id: '4',
+    id: '3',
     name: 'Single Cup',
     category: 0, /* scoops */
     ingredients: 'Single Scoop Cup',
@@ -36,7 +36,7 @@ export const FOODS = [
     image: require('../assets/images/SingleCup.png'),
   },
   {
-    id: '5',
+    id: '4',
     name: 'Double Cup',
     category: 0, /* scoops */
     ingredients: 'Double Scoop Cup',
@@ -45,7 +45,7 @@ export const FOODS = [
     image: require('../assets/images/DoubleCup.png'),
   },
   {
-    id: '6',
+    id: '5',
     name: 'Triple Cup',
     category: 0, /* scoops */
     ingredients: 'Triple Scoop Cup',
@@ -54,7 +54,7 @@ export const FOODS = [
     image: require('../assets/images/TripleCup.png'),
   },
   {
-    id: '7',
+    id: '6',
     name: 'Waffle Bowl',
     category: 0, /* scoops */
     ingredients: 'Waffle Bowl',
@@ -63,7 +63,7 @@ export const FOODS = [
     image: require('../assets/images/WaffleBowl-Sundae.png'),
   },
   {
-    id: '8',
+    id: '7',
     name: 'Lip Schmacker',
     category: 1, /* sundae */
     ingredients: 'Peanut Butter Sundae',
@@ -72,7 +72,7 @@ export const FOODS = [
     image: require('../assets/images/PeanutButter-Sundae.png'),
   },
   {
-    id: '9',
+    id: '8',
     name: 'Sweet Shorty',
     category: 1, /* sundae */
     ingredients: 'Strawberry Shortcake Sundae',
@@ -81,7 +81,7 @@ export const FOODS = [
     image: require('../assets/images/ShortSweetSundae.png'),
   },
   {
-    id: '10',
+    id: '9',
     name: 'Choc Sha-bang',
     category: 1, /* sundae */
     ingredients: "Chocolate Lover's Sundae",
@@ -90,7 +90,7 @@ export const FOODS = [
     image: require('../assets/images/Brownie-Sundae.png'),
   },
   {
-    id: '11',
+    id: '10',
     name: 'Cookie Dreams',
     category: 1, /* sundae */
     ingredients: 'Oreo Cookie Sundae',
@@ -99,7 +99,7 @@ export const FOODS = [
     image: require('../assets/images/CookieDreams-Sundae.png'),
   },
   {
-    id: '12',
+    id: '11',
     name: 'Campfire',
     category: 1, /* sundae */
     ingredients: "S'mores Sundae",
@@ -108,7 +108,7 @@ export const FOODS = [
     image: require('../assets/images/Smores-Sundae.png'),
   },
   {
-    id: '13',
+    id: '12',
     name: 'Pick Me Up',
     category: 1, /* sundae */
     ingredients: "Coffee Sundae",
@@ -117,7 +117,7 @@ export const FOODS = [
     image: require('../assets/images/Coffee-Sundae.png'),
   },
   {
-    id: '14',
+    id: '13',
     name: 'Splitsville',
     category: 1, /* sundae */
     ingredients: "Banana Split",
@@ -126,7 +126,7 @@ export const FOODS = [
     image: require('../assets/images/bananasplit.png'),
   },  
   {
-    id: '15',
+    id: '14',
     name: 'Vanilla Shake',
     category: 2, /* shakes */
     ingredients: "Vanilla Shake",
@@ -135,7 +135,7 @@ export const FOODS = [
     image: require('../assets/images/Vanilla-Shake.png'),
   },
   {
-    id: '16',
+    id: '15',
     name: 'Chocolate Shake',
     category: 2, /* shakes */
     ingredients: "Chocolate Shake",
@@ -144,7 +144,7 @@ export const FOODS = [
     image: require('../assets/images/Chocolate-Shake.png'),
   },
   {
-    id: '17',
+    id: '16',
     name: 'Strawberry Shake',
     category: 2, /* shakes */
     ingredients: "Strawberry Shake",
@@ -153,7 +153,7 @@ export const FOODS = [
     image: require('../assets/images/Strawberry-Shake.png'),
   },
   {
-    id: '18',
+    id: '17',
     name: 'Caramel Shake',
     category: 2, /* shakes */
     ingredients: "Caramel Shake",
@@ -162,7 +162,7 @@ export const FOODS = [
     image: require('../assets/images/Caramel-Shake.png'),
   },
   {
-    id: '19',
+    id: '18',
     name: 'Mint Shake',
     category: 2, /* shakes */
     ingredients: "Mint Shake",
@@ -171,7 +171,7 @@ export const FOODS = [
     image: require('../assets/images/Mint-Shake.png'),
   },
   {
-    id: '20',
+    id: '19',
     name: 'Orange Shake',
     category: 2, /* shakes */
     ingredients: "Orange Cream Shake",
@@ -180,7 +180,7 @@ export const FOODS = [
     image: require('../assets/images/Orange-Shake.png'),
   },
   {
-    id: '21',
+    id: '20',
     name: 'Birthday Shake',
     category: 2, /* shakes */
     ingredients: "Birthday Cake Shake",
@@ -189,7 +189,7 @@ export const FOODS = [
     image: require('../assets/images/BirthdayCake-Shake.png'),
   },
   {
-    id: '22',
+    id: '21',
     name: 'Choc Chip Cookie',
     category: 3, /* cookies */
     ingredients: 'Chocolate Chip Cookie',
@@ -198,7 +198,7 @@ export const FOODS = [
     image: require('../assets/images/ChocChip-Cookie.png'),
   },
   {
-    id: '23',
+    id: '22',
     name: 'Oatmeal Cookie',
     category: 3, /* cookies */
     ingredients: "Oatmeal Raisin Cookie",
@@ -207,7 +207,7 @@ export const FOODS = [
     image: require('../assets/images/OatmealRaisin-Cookie.png'),
   },
   {
-    id: '24',
+    id: '23',
     name: 'Candy Cookie',
     category: 3, /* cookies */
     ingredients: "M & M Cookie",
@@ -216,7 +216,7 @@ export const FOODS = [
     image: require('../assets/images/MM-Cookie.png'),
   },
   {
-    id: '25',
+    id: '24',
     name: 'Peanut Butter Cookie',
     category: 3, /* cookies */
     ingredients: "Peanut Butter Cookie",
@@ -225,7 +225,7 @@ export const FOODS = [
     image: require('../assets/images/PeanutButter-Cookie.png'),
   },
   {
-    id: '26',
+    id: '25',
     name: 'Fudge Brownie',
     category: 4, /* brownies */
     ingredients: "Fudge Brownie (no nuts)",
@@ -234,7 +234,7 @@ export const FOODS = [
     image: require('../assets/images/Fudge-Brownie.png'),
   },
   {
-   id: '27',
+   id: '26',
     name: 'Blondie Bar',
     category: 4, /* brownies */
     ingredients: "Brown Sugar Blondie",
@@ -243,7 +243,7 @@ export const FOODS = [
     image: require('../assets/images/Blondie-Bar.png'),
   },
   {
-    id: '28',
+    id: '27',
      name: 'Grasshopper',
      category: 4, /* brownies */
      ingredients: "Mint Chocolate Brownie",
@@ -252,7 +252,7 @@ export const FOODS = [
      image: require('../assets/images/Mint-Brownie.png'),
    },
    {
-    id: '29',
+    id: '28',
      name: 'Salted Caramel Brownie',
      category: 4, /* brownies */
      ingredients: "Salted Caramel Brownie",
