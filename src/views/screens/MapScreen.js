@@ -33,9 +33,10 @@ class MapScreen extends Component {
             {this.props.locations.locations.map((location, index) => (
                 <Marker
                 key={index}
-                coordinate= {location.latitude}
+                coordinate= {location.latlng}
                 title={location.title}
                 description={location.description}
+                image={location.image}
                 />
             ))}
 
