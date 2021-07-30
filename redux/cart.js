@@ -25,7 +25,15 @@ export const cart = (state = { isLoading: true,
            /*return {...state, cartItems: state.cartItems.concat(action.payload.id), total: state.total + parseFloat(action.payload.price)  }; */
 
         case ActionTypes.DELETE_CART_ITEM:
-            return {...state, cartItems: state.cartItems.filter(cartitem => cartitem !== action.payload)};
+            /* Check to see if the food item needs to be decremented or removed completely if the new quantity is zero */
+            const index2 = state.cartItems.findIndex(cartItem => cartItem.id === action.payload.id); // find food item in cart
+            if (state.cartItems[index2].quantity > 1) {
+                const newArray = [...state.cartItems]; // make a new copy of shopping cart array
+                newArray[index2].quantity--;
+                return {...state, cartItems: newArray,  total: state.total - parseFloat(action.payload.price) };
+            }
+            /* Remove the entire food item from the cart */
+            return {...state, cartItems: state.cartItems.filter(cartitem => cartitem.id !== action.payload.id), total: state.total - parseFloat(action.payload.price)};
 
         case ActionTypes.DROP_CART:
             return {...state, cartItems: [], total: 0 };

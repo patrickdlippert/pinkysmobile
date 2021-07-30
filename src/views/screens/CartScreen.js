@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import {SafeAreaView, StyleSheet, View, Text, Image} from 'react-native';
+import {SafeAreaView, StyleSheet, View, Text, Image, Alert} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { connect } from 'react-redux';
 import COLORS from '../../../shared/colors';
 import {PrimaryButton} from '../components/Button';
-import { dropCart } from '../../../redux/ActionCreators';
+import { dropCart, postCartItem, removeCartItem } from '../../../redux/ActionCreators';
 
 const mapStateToProps = state => {
   return {
@@ -15,10 +15,28 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  dropCart: () => (dropCart())
+  dropCart: () => (dropCart()),
+  postCartItem: foodItem => (postCartItem(foodItem)),
+  removeCartItem: foodItem => (removeCartItem(foodItem))
 };
 
 class CartScreen extends Component {
+
+  handleCheckout = () => {
+    Alert.alert(
+        "Order Submitted",
+        "Thanks subumitting your order. We'll have it ready in approximately 10 minutes!",
+        [
+          {
+            text: "OK",
+            onPress: () => this.props.navigation.navigate('HomeScreen'),
+            style: 'cancel'
+          },
+        ],
+        { cancelable: false }
+    );
+    this.props.dropCart();
+  }
 
  
   render() {
@@ -42,8 +60,12 @@ class CartScreen extends Component {
           <View style={{marginRight: 20, alignItems: 'center'}}>
             <Text style={{fontWeight: 'bold', fontSize: 18}}>{item.quantity}</Text>
             <View style={styles.actionBtn}>
-              <Icon name="remove" size={25} color={COLORS.white} />
-              <Icon name="add" size={25} color={COLORS.white} />
+              <Icon name="remove" size={25} color={COLORS.white} 
+                onPress={() => this.props.removeCartItem(item)}  
+              />
+              <Icon name="add" size={25} color={COLORS.white} 
+                onPress={() => this.props.postCartItem(item)}  
+              />
             </View>
           </View>
         </View>
@@ -51,7 +73,7 @@ class CartScreen extends Component {
     };
 
     /* Construct an array of objects that combines the selected food items with the quantity
-       so that FlatList iterates over one data collection  */
+       from the cart so that FlatList iterates over one data collection  */
     const foodData = this.props.foods.foods.filter(
       food => this.props.cart.cartItems.find(cartItem => cartItem.id == food.id));
 
@@ -107,7 +129,8 @@ class CartScreen extends Component {
                     <Text style={{color: COLORS.primary}} onPress={() => this.props.dropCart()}>Clear Shopping Cart</Text>
                   </View>
                   <View style={{marginHorizontal: 30}}>
-                    <PrimaryButton title="CHECKOUT" />
+                    <PrimaryButton title="CHECKOUT" 
+                     onPress={() => this.handleCheckout()} /> 
                   </View>
                 </View>
               )}

@@ -16,7 +16,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
   postFavorite: foodId => (postFavorite(foodId)),
   deleteFavorite: foodId => (deleteFavorite(foodId)),
-  postCartItem: foodItem => (postCartItem(foodItem)),
+  postCartItem: foodItem => (postCartItem(foodItem))
 };
 
 

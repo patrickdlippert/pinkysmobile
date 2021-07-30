@@ -143,14 +143,14 @@ class HomeScreen extends Component {
         </View>
         <View
           style={{
-            marginTop: 40,
+            marginTop: 20,
             flexDirection: 'row',
             paddingHorizontal: 20,
           }}>
           <View style={style.inputContainer}>
             <Icon name="search" size={28} />
             <TextInput
-              style={{flex: 1, fontSize: 18}}
+              style={{flex: 1, fontSize: 16}}
               placeholder="Search for treats"
             />
           </View>
@@ -184,7 +184,7 @@ const style = StyleSheet.create({
   },
   inputContainer: {
     flex: 1,
-    height: 50,
+    height: 40,
     borderRadius: 10,
     flexDirection: 'row',
     backgroundColor: COLORS.light,
@@ -193,7 +193,7 @@ const style = StyleSheet.create({
   },
   sortBtn: {
     width: 50,
-    height: 50,
+    height: 40,
     marginLeft: 10,
     backgroundColor: COLORS.primary,
     borderRadius: 10,
@@ -201,7 +201,7 @@ const style = StyleSheet.create({
     alignItems: 'center',
   },
   categoriesListContainer: {
-    paddingVertical: 30,
+    paddingVertical: 15,
     alignItems: 'center',
     paddingHorizontal: 20,
   },

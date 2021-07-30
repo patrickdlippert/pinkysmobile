@@ -69,9 +69,15 @@ export const addCartItem = foodItem => ({
     payload: foodItem
 });
 
-export const deleteCartItem = foodId => ({
+export const removeCartItem = foodItem => dispatch => {
+    setTimeout(() => {
+        dispatch(deleteCartItem(foodItem));
+    }, 500);
+};
+
+export const deleteCartItem = foodItem => ({
     type: ActionTypes.DELETE_CART_ITEM,
-    payload: foodId
+    payload: foodItem
 });
 
 export const dropCart = () => ({
