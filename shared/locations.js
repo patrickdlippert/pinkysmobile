@@ -22,10 +22,10 @@ export const LOCATIONS = [
     {
         id: '2',
         title: 'Truck 3',
-        description: "Pinky's Truck Mall",
+        description: "Pinky's Truck Oly Mall",
         latlng: {
-            latitude: 47.0041800,
-            longitude: -122.934100,
+            latitude: 47.041300,
+            longitude: -122.935600,
         },
         image: require('../assets/images/marker.png')
     },
@@ -42,7 +42,7 @@ export const LOCATIONS = [
     {
         id: '4',
         title: 'Truck 5',
-        description: "Pinky's truck Pacific Ave",
+        description: "Pinky's Truck Pacific Ave",
         latlng: {
             latitude: 47.041400,
             longitude: -122.847400

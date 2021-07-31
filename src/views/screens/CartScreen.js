@@ -3,6 +3,7 @@ import {SafeAreaView, StyleSheet, View, Text, Image, Alert} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { connect } from 'react-redux';
+import * as Animatable from 'react-native-animatable';
 import COLORS from '../../../shared/colors';
 import {PrimaryButton} from '../components/Button';
 import { dropCart, postCartItem, removeCartItem } from '../../../redux/ActionCreators';
@@ -102,14 +103,14 @@ class CartScreen extends Component {
     
 
       return (
-        <SafeAreaView style={{backgroundColor: COLORS.white, flex: 1}}>
+        <SafeAreaView style={{backgroundColor: COLORS.lighter, flex: 1}}>
           <View style={styles.header}>
             <Icon name="arrow-back-ios" size={28} onPress={this.props.navigation.goBack} />
             <Text style={{fontSize: 20, fontWeight: 'bold'}}>Cart</Text>
           </View>
 
           {this.props.cart.cartItems.length ? 
-          
+            <Animatable.View animation='fadeInRightBig' duration={1500} >
             <FlatList
               showsVerticalScrollIndicator={false}
               contentContainerStyle={{paddingBottom: 80}}
@@ -148,6 +149,7 @@ class CartScreen extends Component {
                 </View>
               )}
             />
+            </Animatable.View>
 
             : 
 

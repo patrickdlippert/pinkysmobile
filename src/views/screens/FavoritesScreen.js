@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, View, Text, Image, Alert} from 'react-native';
+import {SafeAreaView, StyleSheet, View, Text, Image, Alert} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -83,18 +83,30 @@ class FavoritesScreen extends Component {
     };
 
     return (
-          <Animatable.View animation='fadeInRightBig' duration={2000} >
+      <SafeAreaView style={{backgroundColor: COLORS.lighter, flex: 1}}>
           <View style={styles.header}>
             <Icon name="arrow-back-ios" size={28} onPress={this.props.navigation.goBack} />
             <Text style={{fontSize: 20, fontWeight: 'bold'}}>Favorites</Text>
           </View>
-          <FlatList
-              data={this.props.foods.foods.filter(
-                food => this.props.favorites.includes(food.id))} 
-              renderItem={renderFavoriteItem}
-              keyExtractor={item => item.id.toString()}
-          />
-      </Animatable.View>
+
+          {this.props.favorites.length ? 
+            <Animatable.View animation='fadeInRightBig' duration={1500} >
+              <FlatList
+                  data={this.props.foods.foods.filter(
+                    food => this.props.favorites.includes(food.id))} 
+                  renderItem={renderFavoriteItem}
+                  keyExtractor={item => item.id.toString()}
+              />
+            </Animatable.View>
+
+          : 
+
+            <View style={styles.textContainer}>
+                <Text style={styles.textItem}>You have no favorites saved.</Text>
+            </View>
+          }
+
+      </SafeAreaView>
 
     );
   }
@@ -139,6 +151,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     width: 100
+  },
+  textContainer: {
+    flex:1,
+    margin: 40,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  textItem: {
+    color: COLORS.primary,
+    fontSize: 18,
+    fontWeight: 'bold'
   }
 });
 

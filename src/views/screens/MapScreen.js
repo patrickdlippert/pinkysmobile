@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Dimensions, Image, SafeAreaView, StyleSheet, Text,  View} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import { connect } from 'react-redux';
 import COLORS from '../../../shared/colors';
 import MapView, { Marker } from 'react-native-maps';
@@ -20,29 +21,34 @@ class MapScreen extends Component {
     const mapRegion = {
         latitude: 47.037872,
         longitude: -122.900696,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
+        latitudeDelta: 0.1844,
+        longitudeDelta: 0.0842,
       };
     
     return (
-        <View style={styles.container}>
-            <MapView
-            style={{ alignSelf: 'stretch', height: '100%' }}
-            region={mapRegion}
-            >
-            {this.props.locations.locations.map((location, index) => (
-                <Marker
-                key={index}
-                coordinate= {location.latlng}
-                title={location.title}
-                description={location.description}
-                image={location.image}
-                />
-            ))}
+        <SafeAreaView style={{backgroundColor: COLORS.lighter, flex: 1}}>
+            <View style={styles.header}>
+                <Icon name="arrow-back-ios" size={28} onPress={this.props.navigation.goBack} />
+                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Map</Text>
+            </View>
+            <View style={styles.container}>
+                <MapView
+                    style={{ alignSelf: 'stretch', height: '100%' }}
+                    region={mapRegion}
+                >
+                {this.props.locations.locations.map((location, index) => (
+                    <Marker
+                        key={index}
+                        coordinate= {location.latlng}
+                        title={location.title}
+                        description={location.description}
+                        image={location.image}
+                    />
+                ))}
 
-            </MapView>
-        
-        </View>
+                </MapView>
+            </View>
+        </SafeAreaView>
     );
   }
 }
@@ -52,12 +58,14 @@ class MapScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 20,
+    backgroundColor: COLORS.secondary
   },
   header: {
-    marginTop: 20,
+    paddingVertical: 20,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
+    alignItems: 'center',
+    marginHorizontal: 20,
   },
   inputContainer: {
     flex: 1,
