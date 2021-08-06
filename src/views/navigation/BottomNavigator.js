@@ -6,6 +6,7 @@ import COLORS from '../../../shared/colors';
 import {View, Text} from 'react-native';
 import {connect} from 'react-redux';
 import HomeScreen from '../screens/HomeScreen';
+import FlavorsScreen from '../screens/FlavorsScreen';
 import FavoritesScreen from '../screens/FavoritesScreen';
 import CartScreen from '../screens/CartScreen';
 import MapScreen from '../screens/MapScreen';
@@ -42,11 +43,11 @@ class BottomNavigator extends Component {
           }}
         />
         <Tab.Screen
-          name="LocalMall"
-          component={HomeScreen}
+          name="Flavors"
+          component={FlavorsScreen}
           options={{
             tabBarIcon: ({color}) => (
-              <Icon name="local-mall" color={color} size={28} />
+              <Icon name="icecream" color={color} size={28} />
             ),
           }}
         />

@@ -2,6 +2,10 @@ export const FOODS_LOADING = 'FOODS_LOADING';
 export const ADD_FOODS = 'ADD_FOODS';
 export const FOODS_FAILED = 'FOODS_FAILED';
 
+export const FLAVORS_LOADING = 'FLAVORS_LOADING';
+export const ADD_FLAVORS = 'ADD_FLAVORS';
+export const FLAVORS_FAILED = 'FLAVORS_FAILED';
+
 export const ADD_FAVORITE = 'ADD_FAVORITE';
 export const DELETE_FAVORITE = 'DELETE_FAVORTIE';
 
