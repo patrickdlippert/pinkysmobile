@@ -2,7 +2,7 @@ export const FLAVORS = [
   {
     id: '0',
     name: 'Cookies & Cream',
-    description: 'Our cookies & cream ice cream is unlike any other you’ve tasted. We’ve perfected our cookie recipe by baking the most scrumptious chocolate cookies and then layering in a double dose of our homemade cream filling. The result is an irresistible ice cream with chunks and speckles of these tasty cookie morsels in every bite!',
+    description: 'We’ve perfected our cookie recipe by baking the most scrumptious chocolate cookies and then layering in a double dose of our homemade cream filling. The result is an irresistible ice cream with chunks and speckles of these tasty cookie morsels in every bite!',
     image: require('../assets/images/flavors/cookiescream.png'),
   },
   {
@@ -50,7 +50,7 @@ export const FLAVORS = [
   {
     id: '8',
     name: 'Rocky Road',
-    description: 'Premium. Rich chocolate ice cream loaded with mini marshmallows & crunchy roasted almond chunks. All natural flavors. Go ahead. Treat yourself. Safeway Select premium quality ice cream indulges your palate with the kind of rich creaminess and satisfying sweetness that makes you want more than one scoop. ',
+    description: 'Premium. Rich chocolate ice cream loaded with mini marshmallows & crunchy roasted almond chunks. All natural flavors. Go ahead. Treat yourself to the most decadent Rocky Road trip on Earth!',
     image: require('../assets/images/flavors/rockyroad.png'),
   },
   {
@@ -85,7 +85,7 @@ export const FLAVORS = [
   },  
   {
     id: '14',
-    ingredients: "Vanilla Shake",
+    name: 'Raspberry Sorbet',
     description: "A decadebt non-dairy optinos that captures the bright flavors of summer. Sun-ripened red raspberries create an intensely refreshing and flavorful sorbet.",
     image: require('../assets/images/flavors/raspberrysorbet.png'),
   }

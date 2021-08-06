@@ -39,7 +39,7 @@ class FlavorsScreen extends Component {
     
 
       return (
-        <SafeAreaView style={{backgroundColor: COLORS.lighter, flex: 1}}>
+        <SafeAreaView style={{backgroundColor: COLORS.white, flex: 1}}>
           <View style={styles.header}>
             <Icon name="arrow-back-ios" size={28} onPress={this.props.navigation.goBack} />
             <Text style={{fontSize: 20, fontWeight: 'bold'}}>Flavors</Text>
