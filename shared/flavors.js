@@ -86,7 +86,7 @@ export const FLAVORS = [
   {
     id: '14',
     name: 'Raspberry Sorbet',
-    description: "A decadebt non-dairy optinos that captures the bright flavors of summer. Sun-ripened red raspberries create an intensely refreshing and flavorful sorbet.",
+    description: "A decadent non-dairy options that captures the bright flavors of summer. Sun-ripened red raspberries create an intensely refreshing and flavorful sorbet.",
     image: require('../assets/images/flavors/raspberrysorbet.png'),
   }
 ];
