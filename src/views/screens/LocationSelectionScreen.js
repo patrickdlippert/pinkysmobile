@@ -22,7 +22,7 @@ class LocationSelectionScreen extends Component {
 
     handleLocation = (location) => {
         this.props.selectLocation(location);  
-        this.props.navigation.navigate('Home');
+        //this.props.navigation.navigate('Home');
     }
     
 
@@ -39,15 +39,16 @@ class LocationSelectionScreen extends Component {
                 <Icon name="navigation" color={COLORS.primary} size={28} />
                 <View
                 style={{
-                    height: 120,
+                    height: 140,
                     marginLeft: 10,
                     paddingVertical: 20,
                     flex: 1,
                 }}>
-                    <Text style={{fontWeight: 'bold', fontSize: 16}}>{item.title}</Text>
+                    <Text style={{fontWeight: 'bold', fontSize: 14}}>{item.title}</Text>
                     <Text style={{fontSize: 13, color: COLORS.dark}}>{item.description}</Text>
                     <Text style={{fontSize: 13, color: COLORS.grey}}>{item.address}</Text>
                     <Text style={{fontSize: 13, color: COLORS.grey}}>Open: {item.open} Close: {item.close}</Text>
+                    <Text style={{fontWeight: 'bold', fontSize: 16}} onPress={() =>this.props.navigation.navigate('Home')}>ORDER FROM HERE</Text>
                 </View>
 
             </View>
@@ -96,8 +97,9 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       marginHorizontal: 20,
     },
+    // Card when the location is selected
     locationCard: {
-      height: 120,
+      height: 140,
       elevation: 15,
       borderRadius: 10,
       backgroundColor: COLORS.secondary,
@@ -107,8 +109,9 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
     },
+    // Card when location is not selected
     locationCardNS: {
-        height: 120,
+        height: 140,
         elevation: 15,
         borderRadius: 10,
         backgroundColor: COLORS.light,
