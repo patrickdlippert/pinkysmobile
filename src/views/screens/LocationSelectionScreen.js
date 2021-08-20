@@ -20,9 +20,9 @@ const mapStateToProps = state => {
 
 class LocationSelectionScreen extends Component {
 
-    handleLocation = (location) => {
+    handleLocation = (location, launch) => {
         this.props.selectLocation(location);  
-        //this.props.navigation.navigate('Home');
+        if(launch) this.props.navigation.navigate('Home');
     }
     
 
@@ -33,10 +33,10 @@ class LocationSelectionScreen extends Component {
         
         return (
         <TouchableOpacity
-            onPress={() => this.handleLocation(item)} > 
+            onPress={() => this.handleLocation(item, false)} > 
           <View style={selected ? styles.locationCard : styles.locationCardNS}>
                 <Image source={item.image} style={{height: 80, width: 80}} />
-                <Icon name="navigation" color={COLORS.primary} size={28} />
+                <Icon name="place" color={COLORS.primary} size={28} />
                 <View
                 style={{
                     height: 140,
@@ -48,7 +48,7 @@ class LocationSelectionScreen extends Component {
                     <Text style={{fontSize: 13, color: COLORS.dark}}>{item.description}</Text>
                     <Text style={{fontSize: 13, color: COLORS.grey}}>{item.address}</Text>
                     <Text style={{fontSize: 13, color: COLORS.grey}}>Open: {item.open} Close: {item.close}</Text>
-                    <Text style={{fontWeight: 'bold', fontSize: 16}} onPress={() =>this.props.navigation.navigate('Home')}>ORDER FROM HERE</Text>
+                    <Text style={{fontWeight: 'bold', fontSize: 16}} onPress={() => this.handleLocation(item, true)}>ORDER FROM HERE</Text>
                 </View>
 
             </View>
