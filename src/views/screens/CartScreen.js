@@ -11,7 +11,8 @@ import { dropCart, postCartItem, removeCartItem } from '../../../redux/ActionCre
 const mapStateToProps = state => {
   return {
       foods: state.foods,
-      cart: state.cart
+      cart: state.cart,
+      locations: state.locations
   };
 };
 
@@ -24,7 +25,7 @@ const mapDispatchToProps = {
 class CartScreen extends Component {
 
   handleCheckout = () => {
-    Alert.alert(
+/*    Alert.alert(
         "Order Submitted",
         "Thanks subumitting your order. We'll have it ready in approximately 10 minutes!",
         [
@@ -36,7 +37,9 @@ class CartScreen extends Component {
         ],
         { cancelable: false }
     );
-    this.props.dropCart();
+  */
+    this.props.navigation.navigate("LogInScreen");
+    //this.props.dropCart();
   }
 
  
@@ -109,8 +112,10 @@ class CartScreen extends Component {
             <Text style={{fontSize: 20, fontWeight: 'bold'}}>Cart</Text>
           </View>
 
+
           {this.props.cart.cartItems.length ? 
             <Animatable.View animation='fadeInRightBig' duration={1500} >
+            <Text style={{fontSize: 14, marginLeft: 20, marginBottom: 10, fontWeight: 'bold'}}>Location: {this.props.locations.selectedLocation.address}</Text>
             <FlatList
               showsVerticalScrollIndicator={false}
               contentContainerStyle={{paddingBottom: 80}}

@@ -3,7 +3,8 @@ import { LOCATIONS} from '../shared/locations';
 
 export const locations = (state = { isLoading: true,
                                      errMess: null,
-                                     locations: LOCATIONS}, action) => {
+                                     locations: LOCATIONS,
+                                     selectedLocation: ''}, action) => {
     switch (action.type) {
         case ActionTypes.ADD_LOCATIONS:
             return {...state, isLoading: false, errMess: null, locations: action.payload};
@@ -14,6 +15,9 @@ export const locations = (state = { isLoading: true,
         case ActionTypes.LOCATIONS_FAILED:
             return {...state, isLoading: false, errMess: action.payload};
 
+        case ActionTypes.SELECT_LOCATION:
+            return {...state, isLoading: false, errMess: null, selectedLocation: action.payload};
+    
         default:
             return state;
       }

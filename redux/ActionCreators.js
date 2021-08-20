@@ -84,3 +84,8 @@ export const dropCart = () => ({
     type: ActionTypes.DROP_CART,
     payload: null
 });
+
+export const selectLocation = location => ({
+    type: ActionTypes.SELECT_LOCATION,
+    payload: location
+});
