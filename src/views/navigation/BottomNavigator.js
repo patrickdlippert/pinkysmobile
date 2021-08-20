@@ -69,7 +69,7 @@ class BottomNavigator extends Component {
                   top: -25,
                   elevation: 5,
                 }}>
-                <Icon name="search" color={COLORS.primary} size={28} />
+                <Icon name="navigation" color={COLORS.primary} size={28} />
               </View>
             ),
           }}

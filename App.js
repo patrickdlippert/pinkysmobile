@@ -8,6 +8,8 @@ import DetailsScreen from './src/views/screens/DetailsScreen';
 import FavoritesScreen from './src/views/screens/FavoritesScreen';
 import BottomNavigator from './src/views/navigation/BottomNavigator';
 import OnBoardScreen from './src/views/screens/OnBoardScreen';
+import LogInScreen from './src/views/screens/LogInScreen';
+import RegisterScreen from './src/views/screens/RegisterScreen';
 import { Provider } from 'react-redux';
 import { ConfigureStore } from './redux/configureStore';
 
@@ -22,6 +24,8 @@ const App = () => {
         <StatusBar backgroundColor={COLORS.white} barStyle="dark-content" />
         <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen name="BoardScreen" component={OnBoardScreen} />
+          <Stack.Screen name="LogInScreen" component={LogInScreen}/>
+          <Stack.Screen name="RegisterScreen" component={RegisterScreen}/>
           <Stack.Screen name="Home" component={BottomNavigator} />
           <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
           <Stack.Screen name="FavoritesScreen" component={FavoritesScreen} />

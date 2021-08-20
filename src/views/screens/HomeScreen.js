@@ -5,7 +5,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { connect } from 'react-redux';
 import COLORS from '../../../shared/colors';
 import categories from '../../../shared/categories';
-/*import foods from '../../../shared/foods'; */
 
 const {width} = Dimensions.get('screen');
 const cardWidth = width / 2 - 20;
@@ -35,7 +34,6 @@ class HomeScreen extends Component {
   }
 
   render() {
-    console.log("Render Index: " + this.state.selectedCategoryIndex);
     const foodData = this.props.foods.foods.filter(food => food.category === this.state.selectedCategoryIndex);
 
     const ListCategories = () => {

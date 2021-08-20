@@ -36,57 +36,33 @@ class FlavorsScreen extends Component {
     };
 
 
-    
+    return (
+    <SafeAreaView style={{backgroundColor: COLORS.white, flex: 1}}>
+        <View style={styles.header}>
+        <Icon name="arrow-back-ios" size={28} onPress={this.props.navigation.goBack} />
+        <Text style={{fontSize: 20, fontWeight: 'bold'}}>Flavors</Text>
+        </View>
 
-      return (
-        <SafeAreaView style={{backgroundColor: COLORS.white, flex: 1}}>
-          <View style={styles.header}>
-            <Icon name="arrow-back-ios" size={28} onPress={this.props.navigation.goBack} />
-            <Text style={{fontSize: 20, fontWeight: 'bold'}}>Flavors</Text>
-          </View>
-
-          {this.props.flavors.flavors.length ? 
+        {this.props.flavors.flavors.length ? 
             <Animatable.View animation='fadeInRightBig' duration={1500} >
             <FlatList
-              showsVerticalScrollIndicator={false}
-              contentContainerStyle={{paddingBottom: 80}}
-
-              data = {this.props.flavors.flavors}
-              keyExtractor={item => item.id.toString()}
-
-              renderItem={({item}) => <FlavorCard item={item} />}
-              ListFooterComponentStyle={{paddingHorizontal: 20, marginTop: 20}}
-              ListFooterComponent={() => (
-                <View>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      marginVertical: 15,
-                    }}>
-                  </View>
-
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      marginVertical: 15,
-                    }}>
-                  </View>
-                </View>
-              )}
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={{paddingBottom: 80}}
+                data = {this.props.flavors.flavors}
+                keyExtractor={item => item.id.toString()}
+                renderItem={({item}) => <FlavorCard item={item} />}
             />
             </Animatable.View>
 
-            : 
+        : 
 
             <View style={styles.textContainer}>
                 <Text style={styles.textItem}>No current flavors</Text>
             </View>
-    
+
         }
-        </SafeAreaView>
-      );
+    </SafeAreaView>
+    );
   }
 }
 
