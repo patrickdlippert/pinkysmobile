@@ -44,7 +44,7 @@ class LogInScreen extends Component {
                 error => console.log('Could not delete user info', error)
             );
         }
-        this.props.navigation.navigate('Home')
+        this.props.navigation.navigate('HomeScreen')
 
     }
     

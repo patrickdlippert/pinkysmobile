@@ -25,7 +25,10 @@ const mapDispatchToProps = {
 class CartScreen extends Component {
 
   handleCheckout = () => {
-/*    Alert.alert(
+
+    this.props.navigation.navigate("LogInScreen");
+    this.props.dropCart();
+    /*Alert.alert(
         "Order Submitted",
         "Thanks subumitting your order. We'll have it ready in approximately 10 minutes!",
         [
@@ -37,9 +40,7 @@ class CartScreen extends Component {
         ],
         { cancelable: false }
     );
-  */
-    this.props.navigation.navigate("LogInScreen");
-    //this.props.dropCart();
+    */
   }
 
  
