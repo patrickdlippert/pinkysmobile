@@ -259,5 +259,14 @@ export const FOODS = [
      description: "This salted caramel brownie sprinkles a touch of coarse sea salt in the center layer of rich caramel. This triple layer chocolate brownie is full of pecans and is finished with a dusting of decorative sugar and chocolate shavings.",
      price: '2.75',
      image: require('../assets/images/SaltedCaramel-Brownie.png'),
+   },
+   {
+    id: '29',
+     name: 'Rocky Road Brownie',
+     category: 4, /* brownies */
+     ingredients: "Rocky Road Brownie",
+     description: "This Rocky Road brownie is packed with mini marshmallows, almond pieces, sugar cookie chunks and Cadbury chocolate chunks! Simply spectacularly chewy, crunchy and creamy all at the same time!",
+     price: '2.75',
+     image: require('../assets/images/Rocky-Brownie.png'),
    } 
 ];
